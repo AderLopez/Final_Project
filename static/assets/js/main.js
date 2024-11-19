@@ -6,6 +6,12 @@
 
 (function($) {
 
+
+
+	
+
+
+
 	var	$window = $(window),
 		$body = $('body'),
 		$header = $('#header'),
@@ -141,5 +147,50 @@
 						$menu._hide();
 
 			});
+
+			//Code for containers and image slider:
+	// Get the carousel element
+	let carousel = document.querySelector('.carousel')
+	// Get the buttons
+	let prev = carousel.querySelector('button.prev')
+	let next = carousel.querySelector('button.next')
+	// Get all images
+	let images = carousel.querySelectorAll('.images img')
+	// Starting index of the carousel
+	let index = 0
+
+	// Function to update the carousel when clicking a button
+	function updateImage(direction) {
+	// Different handling based on if you clicked previous or next
+	if (direction === 'prev') {
+		// When clicking previous: Decrease index when its higher than 0
+		index = index > 0 ? index - 1 : index
+		// Disable button if index is 0
+		prev.disabled = index === 0
+		// Enable next
+		next.disabled = false
+	} else {
+		// When clicking next: Increase when lower than img amount
+		index = index < images.length - 1 ? index + 1 : index
+		// Increase when lower than img amount
+		next.disabled = index === images.length - 1
+		// Enable previous
+		prev.disabled = false
+	}
+	// Get the previous image
+	let current = carousel.querySelector('.images img.current')
+	// Hide the previous image
+	if(current) current.classList.remove('current')
+	// Show current image
+	images[index].classList.add('current')
+	}
+	// Event listeners for previous
+	prev.addEventListener('click', () => updateImage('prev'))
+	// Event listeners for next
+	next.addEventListener('click', updateImage)
+
+
+
+
 
 })(jQuery);

@@ -11,13 +11,13 @@
 
 	<!-- Creating the head on HTML -->
 	<head>
-		<title>Skills</title>
+		<title>BMI</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="static/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
 	</head>
-		
+	
 	
 	<!-- Creating the Body on HTML -->
 	<body class="is-preload">
@@ -50,23 +50,49 @@
 					</div>
 				</nav>
 
+
 				<!-- Wrapper -->
-				<!-- This section states the information of the climate in subdury -->
 					<section id="wrapper">
 						<header>
 							<div class="inner">
-								<h2>Weather</h2>
-								<p>This web will provide the current weather in Sudbury</p>
-								<p>The weather is {{description}}</p>
-								<p>The current temperature in degrees centigrade is: {{temperature}}  </p>
-
-							</div>
-						</header>
-		
+								<h2>This is the Web for Module 7</h2>
+								<p>The purpose of this interface is to send information to a Phone number
+									<br>We will be using: https://www.twilio.com/en-us
+									<br>We will also be using the weather API:https://api.openweathermap.org
+									<br>Finally, we will use the Harry Potter API: 
+								</p>
+								
+									
+								
+					<!-- Inputs From the Username -->
+					<section id="Wrapper">
+						<div class="inner">
+							<!-- Post method to send the information using Flask -->
+							<form method="post" action="/bmi">
+								<div class="fields">
+									<div class="field">
+										<!-- Testing inputs -->
+										<label for="height">Height (cm)</label>
+										<input type="text" name="height" id="height" />
+									</div>
+									<div class="field">
+										<label for="weight">Weight (kg)</label>
+										<input type="text" name="weight" id="weight" />
+									</div>
+								</div>
+								<ul class="actions">
+									<input  type="submit" value="Calculate">
+								</ul>
+							</form>
+							<!-- Message that only will be shown is the variables have information, after calculting -->
+							<p> {{bmi}}</p>
+							<p> {{message}}</p>
+						</div>
 					</section>
+							
 
 			</div>
-
+			
 		<!-- Calling the Scripts provided from the template -->
 			   
 		<script src="static/assets/js/jquery.min.js"></script>

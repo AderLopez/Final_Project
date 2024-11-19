@@ -72,6 +72,137 @@ input, select, textarea {
 	appearance: none;
 }
 
+/*New Lines for containers and image slider*/
+section.carousel {
+	width:100%;
+	height: 100%;
+	margin:auto;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+  }
+  section.carousel button {
+	border:none;
+	border-radius:0;
+	outline:none;
+	width:auto;
+	/*background:white;*/
+	transition:all 0.2s;
+  }
+  section.carousel button:disabled {
+	opacity:0.5;
+  }
+  section.carousel button:not(:disabled):hover {
+	cursor:pointer;
+	opacity:0.85;
+  }
+  section.carousel .images {
+	position:relative;	
+	align-items: center;	
+	width:100%;
+	height:100%;
+  }
+  section.carousel .images img {
+	display:none;
+	align-items: center;
+	width:100%;
+	height:100%;
+	object-fit: cover;
+  }
+  section.carousel .images img.current {
+	display:block;
+
+}
+
+.centered-text {
+	text-align: center;
+}
+
+.Section-Container {
+	display: flex;           /* Enables flexible layout if you have multiple columns */
+	flex-direction: column;   /* Stacks child elements vertically */
+	align-items: center;      /* Centers items horizontally within the section */
+	justify-content: flex-start; /* Aligns content to the top */
+	padding: 10px;            /* Adds padding around the content */
+	background-color: #f5f5f5; /* Example background color */
+	max-height: 100vh;       /* Limits the maximum height of the section */
+	overflow-y: auto;       /* Adds a vertical scrollbar if content overflows */
+}
+
+.dashboard-container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start; ;
+	padding: 0px;
+	background-color: #46495200;
+	height: 45vh;
+	position: relative;  /* Keeps content within its own section */
+	overflow: auto;  /* Prevents overflow from the container */
+}
+
+.box-container {
+	display: flex;
+	gap: 5px;
+
+}
+
+.box {
+	background-color: #2e3141;
+	background-image: linear-gradient(to top, rgba(202, 12, 6, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+	background-size: auto;
+	background-attachment: fixed;
+	background-position: center;
+	background-color: #2a1a64;
+	border-radius: 2px;
+	box-shadow: 0 2px 2px rgba(27, 20, 163, 0.792);
+	padding: 10px;
+	width: calc(20% - 10px);  /* Ensures 3 boxes per row with 5px gap */
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: transform 0.3s ease;
+	margin-bottom: 10px; /* Adds space below each box to avoid overlap */
+}
+
+.box:hover {
+	transform: translateY(-10px);
+}
+
+.text {
+	margin-bottom: 5px;
+}
+
+.topic-heading {
+	font-size: 1.2em;
+	color: #ffffff;
+	margin: 0;
+}
+
+.topic {
+	font-size: 0.8em;
+	color: #ffffff;
+}
+
+.box img {
+	width: 50px;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.box-container {
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.box {
+		width: 100%;
+	}
+}
+
+
 /* Basic */
 
 	@-ms-viewport {
