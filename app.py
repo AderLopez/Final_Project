@@ -24,8 +24,21 @@ app = Flask(__name__, template_folder='templates')
 
 
 #Calling the index.html that will be the home page.
-@app.route('/')
+@app.route('/',methods=['POST','GET'])
 def Index():
+    import space_information
+    import get_weather
+    import harry_potter
+
+    number_people_space =   space_information.space_people_number()
+    print(number_people_space)  
+    temperature = get_weather.get_city('sudbury')
+    print(temperature)
+    character = harry_potter.information()
+    print(character)
+
+
+
     return render_template("module_7.html")
 
 
