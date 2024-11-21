@@ -75,13 +75,13 @@ input, select, textarea {
 
 /*New lines for Harry Potter*/
 #hogwarts-background{
-	width: auto;
-	height:1100px;
+	width: 100%;
+	height:100%;
 	background-image: url("images/dobby_background.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	display: flex;
+	display: fixed;
   }
   #form-wrapper{
 	width:100%;

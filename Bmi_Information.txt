@@ -1,4 +1,8 @@
-You have a Normal Weight
-Weight: 59.0 
+You are Underweight
+Weight: 30.0 
+Height:162.0  
+Your BMI is: 11.4
+You are Underweight
+Weight: 45.0 
 Height:172.0  
-Your BMI is: 19.9
+Your BMI is: 15.2

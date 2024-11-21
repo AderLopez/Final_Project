@@ -28,6 +28,7 @@ def graph_bar_chart(name, values,x_label, y_label):
     chart.title=(name)
     chart.x_title = x_label
     chart.y_title = y_label
+    
     # Add the data to the chart (countries and their player counts)
     chart.x_labels = categories  # Country names (x-axis)
     chart.add('Players per Country', counts)  # Player counts (y-axis)

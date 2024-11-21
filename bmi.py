@@ -28,7 +28,7 @@ def bmi_calculator(weight, height):
         message = "You have a Obese Class III"
 
     #Writing the elements variable information on a file called Bmi_information. txt
-    with open('Bmi_Information.txt', 'w', encoding='utf-8') as Bmi_text:
+    with open('Bmi_Information.txt', 'a', encoding='utf-8') as Bmi_text:
         Bmi_text.write(message + '\n')
         message_2 = f"Weight: {weight} \nHeight:{height}  \nYour BMI is: {BMI}"
         Bmi_text.write(str(message_2)+ '\n')

@@ -11,7 +11,7 @@
 
 	<!-- Creating the head on HTML -->
 	<head>
-		<title>Weather</title>
+		<title>Module 3</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="static/assets/css/main.css" />
@@ -45,7 +45,6 @@
 							<li><a href="bmi">BMI Calculator</a></li>
 							<li><a href="module_3">Module 3</a></li>  
 						</ul>
-
 						<!-- Close button on the Menu -->
 						<a href="#" class="close">Close</a>
 					</div>
@@ -53,18 +52,50 @@
 
 				<!-- Wrapper -->
 				<!-- This section states the information of the climate in Subdury -->
-					<section id="wrapper">
-						<header>
-							<div class="inner">
-								<h2>Weather</h2>
-								<p>This web will provide the current weather in Sudbury</p>
-								<p>The weather is {{description}}</p>
-								<p>The current temperature in degrees centigrade is: {{temperature}}  </p>
+				<section id="wrapper">
 
-							</div>
-						</header>
-		
-					</section>
+					<header>
+					<!--The information below will be centered and show the variables using ninja-->
+					<center>
+						<!--First part to show the ISS location-->
+						<div class="inner">
+							<h2>This Web is for Assignment 3 of Connected Data</h2>
+							<p>Cambrian College</p>
+							<br>
+							<h3>The International Space Station is located now in: </h3>
+							<p>Latitude: {{Latitude}}, Longitude: {{Longitude}} </p>
+							<p>Click Here to see it on Maps: <a href="{{Link}}"> {{Link}}</a></p>
+							
+						<section>
+							<!--Showing the weather below ISS-->
+
+
+								<img  src="static/images/ISS_image.jpg"  alt=""  style="max-width:60% ; max-height: auto;" />
+
+							<br>
+							<h3>The weather below the International Space Station is: </h3>
+							<p>Temperature: {{Temperature}} Centigrades</p>
+							<p>The weather now is: {{Description}}</p>
+						</section>
+
+						<h3>Location of the International Space Station: </h3>
+						<p> The ISS is over: {{Country_Name}}</p>
+						
+						<!--Showing the flag below ISS and the flag of peru-->
+						<div class="row gtr-uniform"></div>
+							<div  class="col-4"><span class="image fit"><img  src={{Flag_dynamic}}  style="width:250px;", alt=""  /></span></div>
+							<p> Additionally, the Flag of Peru is:</p>
+							<div  class="col-4"><span class="image fit"><img  src={{Flag_static}}  style="width:250px;", alt=""  /></span></div>
+							<br>
+							<h3>The distance between Cambrian College(Sudbury) and the ISS is: </h3>
+							<p>Distance: {{Distance}} Km</p>
+						</div>
+
+
+
+					</center>
+					</header>
+				</section>
 
 			</div>
 
