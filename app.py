@@ -7,11 +7,12 @@ from flask import Flask,render_template, request
 app = Flask(__name__)
 
 
-#Import libraries for Assignment 3
+#Import libraries for Assignment
 import urllib.request
 import json
 from get_weather import get_weathers
 import nba
+from random import randint
 
 
 #Normal path when not using a specific folder:
@@ -23,24 +24,41 @@ import nba
 app = Flask(__name__, template_folder='templates') 
 
 
-#Calling the index.html that will be the home page.
+#Calling the index.html that will be the home page, in this case is set for module 7 assignment:
 @app.route('/',methods=['POST','GET'])
 def Index():
-    import space_information
-    import get_weather
+    import messaging
     import harry_potter
 
-    number_people_space =   space_information.space_people_number()
-    print(number_people_space)  
-    temperature = get_weather.get_city('sudbury')
-    print(temperature)
-    character = harry_potter.information()
-    print(character)
+    if request.method == 'POST':
 
+        #Values obtain from the user:
+        #Evaluating if the user input a number, to avoid an error:
+        if request.form.get('number') == "":
+            number = 0
+        else:
+             number =int(request.form.get('number'))
 
+        #We need a number between 1 and 40 to called a character from Harry potter API:
+        if number >=1 and number<=40:
+            link = harry_potter.get_random_picture(number)
+            if link != "":
+                link = link
+            else:
+                #Image for a scenario that there is no image in the API 
+                link = "static/images/No_Image_Available.jpg"  
+        else:
+            #Image for a scenario where the user didn't input a number:
+            link = "static/images/No_Image_Available.jpg"
+        
+        message = messaging.messaging_process()
+        return render_template("module_7.html",number = number, link = link,message=message)
 
-    return render_template("module_7.html")
-
+    #Normal Get request, when there is no information sent:
+    elif request.method == 'GET':
+      #Initial Image to get a better look
+      link = "static/images/hogwarts_background.jpg"
+      return render_template("module_7.html",link=link)
 
 
 
@@ -61,7 +79,7 @@ def bmi():
         #BMI function returns two values after given the height and weight
         bmi, message = bmi.bmi_calculator(float(weight), float(height))
         
-        #Changing the BMI into a message to show in HMTL:
+        #Changing the BMI into a message to show in HTML:
         bmi = f"Yor BMI is {bmi}"
 
         #Returning the two messages for the user with the calculation and evaluation of BMI.
@@ -79,7 +97,7 @@ def weather():
     #Importing the weather function from a .py file
     import weather 
 
-    #Using the function I get the description for the day and temperature on celcius.
+    #Using the function I get the description for the day and temperature on celsius.
     description, temperature = weather.printing_weather()
 
     #Returning the variables to be shown in the Webpage in HTML

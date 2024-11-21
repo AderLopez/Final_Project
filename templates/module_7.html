@@ -22,16 +22,17 @@
 	<!-- Creating the Body on HTML -->
 	<body class="is-preload">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="./" >Personal Profile Home</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="./" >Personal Profile Home</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+
+		<div id="hogwarts-background">
 
 				<!-- Menu for the options on the Webpage -->
 				<nav id="menu">
@@ -52,48 +53,83 @@
 
 
 				<!-- Wrapper -->
-					<section id="wrapper">
-						<header>
+				<section id="form-wrapper">
+
 							<div class="inner">
+
 								<h2>This is the Web for Module 7</h2>
-								<p>The purpose of this interface is to send information to a Phone number
-									<br>We will be using: https://www.twilio.com/en-us
-									<br>We will also be using the weather API:https://api.openweathermap.org
-									<br>Finally, we will use the Harry Potter API: https://hp-api.herokuapp.com/								
-								</p>
-								
+								<p>The purpose of this interface is to send information to a Phone number using different APIs:</p>
+								<!-- Creating a table-->
+								<table class="table-wrapper">
+									<thead>
+										<tr>
+											<th>API</th>
+											<th>API Link</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>https://www.twilio.com/en-us</td>
+
+										</tr>
+
+										<tr>
+											<td>2</td>
+											<td>https://api.openweathermap.org</td>
+
+										</tr>
+										
+
+										<tr>
+											<td>3</td>
+											<td>https://hp-api.herokuapp.com/</td>
+
+										</tr>
+
+										<tr>
+											<td>4</td>
+											<td>http://api.open-notify.org/astros.json</td>
+
+										</tr>
+
+									</tbody>
+
+								</table>
 									
-								
-					<!-- Inputs From the Username -->
-					<section id="Wrapper">
-						<div class="inner">
+
+						<center>
 							<!-- Post method to send the information using Flask -->
-							<form method="post" action="/bmi">
+							<form method="post" action="/">
 								<div class="fields">
 									<div class="field">
-										<!-- Testing inputs -->
-										<label for="height">Height (cm)</label>
-										<input type="text" name="height" id="height" />
-									</div>
-									<div class="field">
-										<label for="weight">Weight (kg)</label>
-										<input type="text" name="weight" id="weight" />
+										<label for="weight">Please Insert a number between 1 and 40</label>
+										<input type="text" name="number" id="number"/>
 									</div>
 								</div>
-								<ul class="actions">
-									<input  type="submit" value="Calculate">
-								</ul>
-							</form>
-							<!-- Message that only will be shown is the variables have information, after calculting -->
-							<p> {{bmi}}</p>
-							<p> {{message}}</p>
-						</div>
-					</section>
-							
 
-			</div>
-			
-		<!-- Calling the Scripts provided from the template -->
+								<ul class="actions">
+									<input  type="submit" value="send_message">
+								</ul>
+								<!-- Message that only will be shown after pressing send -->
+								<p>{{message}}</p>
+							</form>
+
+
+							<img src="{{ link }}" alt="HR_image" style="max-width: 500px; max-height: 300px;">
+						</center>
+
+					</section>
+
+
+
+
+		</div>
+
+
+
+		
 			   
 		<script src="static/assets/js/jquery.min.js"></script>
 		<script src="static/assets/js/jquery.scrollex.min.js"></script>
