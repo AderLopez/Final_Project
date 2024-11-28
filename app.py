@@ -27,6 +27,35 @@ app = Flask(__name__, template_folder='templates')
 #Calling the index.html that will be the home page, in this case is set for module 7 assignment:
 @app.route('/',methods=['POST','GET'])
 def Index():
+    import requests
+    import creating_workbook
+    #Getting information to plot from COINCAP:
+    url = 'https://api.coincap.io/v2/assets'
+    response = requests.get(url)
+    #print(response)
+    data = response.json()
+
+
+    data = [{"Coin_Name": item['name'], "Rank": item['rank']} for item in data['data']]
+    creating_workbook.Creating_workbook(data)
+    # for cur in data['data']:
+    #     print(cur['name'],cur['symbol'],cur['rank'])
+
+
+
+    if request.method == 'POST':
+        return render_template("module_8.html")
+
+    #Normal Get request, when there is no information sent:
+    elif request.method == 'GET':
+      return render_template("module_8.html")
+
+
+
+
+#Calling the index.html that will be the home page, in this case is set for module 7 assignment:
+@app.route('/module_7',methods=['POST','GET'])
+def module_7():
     import messaging
     import harry_potter
 
@@ -59,7 +88,6 @@ def Index():
       #Initial Image to get a better look
       link = "static/images/hogwarts_background.jpg"
       return render_template("module_7.html",link=link)
-
 
 
 #Calling the BMI calculator as post and get to calculate values taken from user input:

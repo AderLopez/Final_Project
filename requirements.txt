@@ -7,7 +7,10 @@ seaborn
 pygal
 twilio
 geopy
-#You need to set the following credentials under secrets:
-#ACCOUNT_SID
-#AUTHENTICATION_TOKEN
-#MY_PHONE_NUMBER
+openpyxl
+
+
+#You need to set the following credentials under secrets do not include the " symbol on your data as Phone number:
+#ACCOUNT_SID: Is the account SID from Twilio
+#AUTHENTICATION_TOKEN: Provided Authentication token from Twilio
+#MY_PHONE_NUMBER: Your phone number register with your Twilio Account.

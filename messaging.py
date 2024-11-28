@@ -10,6 +10,12 @@ def messaging_process():
         account_sid = os.getenv('ACCOUNT_SID')
         auth_token = os.getenv('AUTHENTICATION_TOKEN')
         client = Client(account_sid,auth_token)
+        
+        #Checking that the API information is appropiate:
+        print(account_sid)
+        print(auth_token)
+        print(os.getenv('MY_PHONE_NUMBER'))
+        
         #we will create our db
 
         import space_information
