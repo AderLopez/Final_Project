@@ -6,3 +6,7 @@ You are Underweight
 Weight: 45.0 
 Height:172.0  
 Your BMI is: 15.2
+You have a Obese Class III
+Weight: 145.0 
+Height:125.0  
+Your BMI is: 92.8

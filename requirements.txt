@@ -1,1 +1,13 @@
 flask
+matplotlib
+sns
+requests
+pandas
+seaborn
+pygal
+twilio
+geopy
+#You need to set the following credentials under secrets:
+#ACCOUNT_SID
+#AUTHENTICATION_TOKEN
+#MY_PHONE_NUMBER
