@@ -29,22 +29,33 @@ app = Flask(__name__, template_folder='templates')
 def Index():
     import requests
     import creating_workbook
+    import pandas as pd
+
     #Getting information to plot from COINCAP:
-    url = 'https://api.coincap.io/v2/assets'
-    response = requests.get(url)
-    #print(response)
-    data = response.json()
-
-
-    data = [{"Coin_Name": item['name'], "Rank": item['rank']} for item in data['data']]
-    creating_workbook.Creating_workbook(data)
-    # for cur in data['data']:
-    #     print(cur['name'],cur['symbol'],cur['rank'])
 
 
 
     if request.method == 'POST':
-        return render_template("module_8.html")
+        url = 'https://api.coincap.io/v2/assets'
+        response = requests.get(url)
+        #print(response)
+        #copying the json information twice to use it differently.
+
+        data = response.json()
+        data1 = response.json()
+        df= pd.DataFrame(data1['data'])
+        mean_price = pd.to_numeric(df['priceUsd']).mean()
+        print(mean_price)
+        median_price = pd.to_numeric(df['priceUsd']).median()
+        print(median_price)
+        std_price = pd.to_numeric(df['priceUsd']).std()
+        print(std_price)
+        data = [{"Coin_Name": item['name'], "Rank": item['rank'],"priceUsd": item['priceUsd']} for item in data['data']]
+
+        creating_workbook.Creating_workbook(data, round(mean_price,1), round(median_price,1), round(std_price,1))
+        # for cur in data['data']:
+        #     print(cur['name'],cur['symbol'],cur['rank'])
+        return render_template("module_8.html",mean = round(mean_price,1),median = round(median_price,1),std = round(std_price,1))
 
     #Normal Get request, when there is no information sent:
     elif request.method == 'GET':
