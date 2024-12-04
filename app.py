@@ -164,8 +164,6 @@ def module_5():
     current_rate_btc,current_rate_jpy, current_date = Crytocurrency.Bitcoin_rate()
     return render_template("module_5.html",Current_date = current_date, Current_rate_BTC = current_rate_btc, Current_rate_JPY = current_rate_jpy )
 
-
-
 #Calling the BMI calculator as post and get to calculate values taken from user input:
 @app.route('/module_2_bmi', methods=['POST','GET'])
 def module_2_bmi():
@@ -192,7 +190,6 @@ def module_2_bmi():
     #Normal Get request, when there is no information sent:
     elif request.method == 'GET':
       return render_template("module_2_bmi.html")
-
 
 #Calling the weather webpage
 @app.route('/module_2_weather')
