@@ -1,3 +1,15 @@
+###Information
+#The following project requires to make sure the requirements.txt is run in the codespace to install all the necessary libraries.
+#If the Environment doesn't run the libraries try the following command: pip install -r requirements.txt
+
+##Is neededd to set the following credentials under secrets for the codespace do not include the " symbol on your data as Phone number:
+#ACCOUNT_SID: Is the account SID from Twilio
+#AUTHENTICATION_TOKEN: Provided Authentication token from Twilio
+#MY_PHONE_NUMBER: Your phone number register with your Twilio Account. +1 ########### 
+
+
+
+
 # Try Out Development Containers: Python
 
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/vscode-remote-try-python)

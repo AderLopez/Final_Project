@@ -24,16 +24,62 @@ from random import randint
 app = Flask(__name__, template_folder='templates') 
 
 
+
 #Calling the index.html that will be the home page, in this case is set for module 7 assignment:
-@app.route('/',methods=['POST','GET'])
+@app.route('/')
 def Index():
+    
+    return render_template("index.html")
+
+#Calling the experience webpage
+@app.route('/projects')
+def projects():
+    return render_template("projects.html")
+
+#Calling the experience webpage
+@app.route('/experience')
+def experience():
+    return render_template("experience.html")
+
+#Calling the skills webpage
+@app.route('/skills')
+def skills():
+    return render_template("skills.html")
+
+#Calling the education webpage
+@app.route('/education')
+def education():
+    return render_template("education.html")
+
+#Calling the licenses webpage
+@app.route('/licenses')
+def licenses():
+    return render_template("licenses.html")
+
+
+#Calling module 11 assignment:
+@app.route('/module_11',methods=['POST','GET'])
+def module_11():
+    return render_template("module_11.html")
+
+#Calling module 10 assignment:
+@app.route('/module_10',methods=['POST','GET'])
+def module_10():
+    return render_template("module_10.html")
+
+#Calling module 9 assignment:
+@app.route('/module_9',methods=['POST','GET'])
+def module_9():
+    return render_template("module_9.html")
+
+#Calling module 8 assignment:
+@app.route('/module_8',methods=['POST','GET'])
+def module_8():
     import requests
     import creating_workbook
     import pandas as pd
 
     #Getting information to plot from COINCAP:
-
-
 
     if request.method == 'POST':
         url = 'https://api.coincap.io/v2/assets'
@@ -61,10 +107,7 @@ def Index():
     elif request.method == 'GET':
       return render_template("module_8.html")
 
-
-
-
-#Calling the index.html that will be the home page, in this case is set for module 7 assignment:
+#Calling module 7 assignment:
 @app.route('/module_7',methods=['POST','GET'])
 def module_7():
     import messaging
@@ -100,10 +143,32 @@ def module_7():
       link = "static/images/hogwarts_background.jpg"
       return render_template("module_7.html",link=link)
 
+#Calling module 6 assignment:
+@app.route('/module_6', methods=['POST','GET'])
+def module_6():
+    #Calling the nba program that gets the information and saves the graphs:
+    #Information retrieve about teams:
+    teams_number = nba.all_teams()
+
+    #Information retrieve about players:
+    players_number, Highest_country_provider,highest_height,tallest_player = nba.players()
+
+    return render_template("module_6.html", teams_number = teams_number, players_number=players_number,Highest_country_provider=Highest_country_provider,tallest_player=tallest_player,highest_height=highest_height)
+
+#Calling the index.html that will be the home page.
+@app.route('/module_5', methods=['POST','GET'])
+def module_5():
+    import Crytocurrency
+    Crytocurrency.cryptocurrency()
+
+    current_rate_btc,current_rate_jpy, current_date = Crytocurrency.Bitcoin_rate()
+    return render_template("module_5.html",Current_date = current_date, Current_rate_BTC = current_rate_btc, Current_rate_JPY = current_rate_jpy )
+
+
 
 #Calling the BMI calculator as post and get to calculate values taken from user input:
-@app.route('/bmi', methods=['POST','GET'])
-def bmi():
+@app.route('/module_2_bmi', methods=['POST','GET'])
+def module_2_bmi():
     
     #This first method evaluates the input from user and return two messages:
     if request.method == 'POST':
@@ -122,16 +187,16 @@ def bmi():
         bmi = f"Yor BMI is {bmi}"
 
         #Returning the two messages for the user with the calculation and evaluation of BMI.
-        return render_template('bmi.html', bmi = bmi, message = message)
+        return render_template('module_2_bmi.html', bmi = bmi, message = message)
     
     #Normal Get request, when there is no information sent:
     elif request.method == 'GET':
-      return render_template("bmi.html")
+      return render_template("module_2_bmi.html")
 
 
 #Calling the weather webpage
-@app.route('/weather')
-def weather():
+@app.route('/module_2_weather')
+def module_2_weather():
     
     #Importing the weather function from a .py file
     import get_weather 
@@ -140,20 +205,7 @@ def weather():
     description, temperature = get_weather.printing_weather()
 
     #Returning the variables to be shown in the Webpage in HTML
-    return render_template("weather.html", description = description, temperature = temperature)
-
-#Calling the Dashboard
-@app.route('/dashboard', methods=['POST','GET'])
-def dashboard():
-    #Calling the nba program that gets the information and saves the graphs:
-    #Information retrieve about teams:
-    teams_number = nba.all_teams()
-
-    #Information retrieve about players:
-    players_number, Highest_country_provider,highest_height,tallest_player = nba.players()
-
-    return render_template("dashboard.html", teams_number = teams_number, players_number=players_number,Highest_country_provider=Highest_country_provider,tallest_player=tallest_player,highest_height=highest_height)
-
+    return render_template("module_2_weather.html", description = description, temperature = temperature)
 
 #Assignment 3 new tab:
 @app.route('/module_3')

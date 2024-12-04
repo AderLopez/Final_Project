@@ -8,9 +8,10 @@ pygal
 twilio
 geopy
 openpyxl
-
+nasdaq-data-link
 
 #You need to set the following credentials under secrets do not include the " symbol on your data as Phone number:
 #ACCOUNT_SID: Is the account SID from Twilio
 #AUTHENTICATION_TOKEN: Provided Authentication token from Twilio
 #MY_PHONE_NUMBER: Your phone number register with your Twilio Account.
+#If the Environment doesn't run the libraries try the following command: pip install -r requirements.txt

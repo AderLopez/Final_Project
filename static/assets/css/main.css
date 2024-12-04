@@ -145,9 +145,10 @@ section.carousel {
 	flex-direction: column;   /* Stacks child elements vertically */
 	align-items: center;      /* Centers items horizontally within the section */
 	justify-content: flex-start; /* Aligns content to the top */
-	padding: 10px;            /* Adds padding around the content */
+	padding: 5px;            /* Adds padding around the content */
 	background-color: #f5f5f5; /* Example background color */
-	max-height: 100vh;       /* Limits the maximum height of the section */
+	height: auto; 
+	max-height: 100%;        /* Limits the maximum height of the section */
 	overflow-y: auto;       /* Adds a vertical scrollbar if content overflows */
 }
 
@@ -157,7 +158,7 @@ section.carousel {
 	align-items: flex-start; ;
 	padding: 0px;
 	background-color: #46495200;
-	height: 45vh;
+	height: auto;
 	position: relative;  /* Keeps content within its own section */
 	overflow: auto;  /* Prevents overflow from the container */
 }
@@ -189,6 +190,17 @@ section.carousel {
 	margin-bottom: 10px; /* Adds space below each box to avoid overlap */
 }
 
+.box:hover {
+	transform: translateY(-10px);
+}
+
+.box1-container {
+	display: flex;
+	gap: 5px;
+	justify-content: center;
+
+
+}
 .box1 {
 	background-color: #2e3141;
 	background-image: linear-gradient(to top, rgba(202, 12, 6, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
@@ -200,16 +212,17 @@ section.carousel {
 	border-radius: 2px;
 	box-shadow: 0 2px 2px rgba(27, 20, 163, 0.792);
 	padding: 10px;
-	width: 20%;  /* Ensures 3 boxes per row with 5px gap */
+	width: 50%;  /* Ensures 3 boxes per row with 5px gap */
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	transition: transform 0.3s ease;
-	margin-bottom: 10px; /* Adds space below each box to avoid overlap */
+	margin-bottom: auto; /* Adds space below each box to avoid overlap */
 }
 
-.box:hover {
+
+.box1:hover {
 	transform: translateY(-10px);
 }
 
@@ -240,6 +253,12 @@ section.carousel {
 	height: auto;
 	margin-bottom: 10px;
 }
+
+
+
+
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -73,7 +73,7 @@ def Creating_workbook(data,mean,median,std):
 
         chartObj.title = 'Line Chart Price vs Rank'
         sheet4.add_chart(chartObj,'A1')
-        wb.save('Test.xlsx') #"Excel/samplechart.xlsx"
+        wb.save('static/files/Test.xlsx') #"Excel/samplechart.xlsx"
         print('Done')
 
         #Sheet 5 will contain a Pie Chart

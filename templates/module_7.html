@@ -22,113 +22,130 @@
 	<!-- Creating the Body on HTML -->
 	<body class="is-preload">
 
+		<!-- Page Wrapper -->
+		<div id="page-wrapper">
 
-		<!-- Header -->
-		<header id="header">
-			<h1><a href="./" >Personal Profile Home</a></h1>
-			<nav>
-				<a href="#menu">Menu</a>
-			</nav>
-		</header>
+			<!-- Header -->
+			<header id="header">
+				<h1><a href="./" >Personal Profile Home</a></h1>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
 
-		<br>
-		<br>
-
-
-		<div id="hogwarts-background">
-
-			<!-- Menu for the options on the Webpage -->
-			<nav id="menu">
-				<div class="inner">
-					<h2>Menu</h2>
-					<ul class="links">
-						<!--<li><a href="./">Home</a></li>-->
-						<li><a href="./">Module 8</a></li>
-						<li><a href="module_7">Module 7</a></li>    
-						<li><a href="dashboard">Module 6</a></li>  
-						<li><a href="weather">Weather</a></li>
-						<li><a href="bmi">BMI Calculator</a></li>
-						<li><a href="module_3">Module 3</a></li>  
-					</ul>
-
-					<!-- Close button on the Menu -->
-					<a href="#" class="close">Close</a>
-				</div>
-			</nav>
+			<br>
+			<br>
 
 
-			<!-- Wrapper -->
-			<section id="form-wrapper">
-				<h2>This is the Web for Module 7</h2>
-				<p>The purpose of this interface is to send information to a Phone number using different APIs:</p>
-				
-				<!-- Creating a table-->
-				<table class="table-wrapper">
-					<thead>
-						<tr>
-							<th>API</th>
-							<th>API Link</th>
-
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>https://www.twilio.com/en-us</td>
-
-						</tr>
-
-						<tr>
-							<td>2</td>
-							<td>https://api.openweathermap.org</td>
-
-						</tr>
-						
-
-						<tr>
-							<td>3</td>
-							<td>https://hp-api.herokuapp.com/</td>
-
-						</tr>
-
-						<tr>
-							<td>4</td>
-							<td>http://api.open-notify.org/astros.json</td>
-
-						</tr>
-					</tbody>
-				</table>
-
-
-
-				<center>
-					<!-- Post method to send the information using Flask -->
-					<form method="post" action="/">
-						<div class="fields">
-							<div class="field">
-								<label for="weight">Please Insert a number between 1 and 40</label>
-								<input type="text" name="number" id="number"/>
-							</div>
+					<!-- Menu for the options on the Webpage -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="./">Home</a></li>
+								<li><a href="experience">Experiences</a></li>
+								<li><a href="skills">Skills</a></li>
+								<li><a href="education">Education</a></li>
+								<li><a href="licenses">Certifications</a></li>
+								<li><a href="projects">Projects</a></li>
+							</ul>
+							<!-- Close button on the Menu -->
+							<a href="#" class="close">Close</a>
 						</div>
+					</nav>
 
-						<ul class="actions">
-							<input  type="submit" value="send_message">
-						</ul>
-						<!-- Message that only will be shown after pressing send -->
-						<p>{{message}}</p>
-					</form>
-					<img src="{{ link }}" alt="HR_image" style="max-width:300px ; max-height: auto;">
-				</center>
 
-			</section>
-		</div>
-			   
-		<script src="static/assets/js/jquery.min.js"></script>
-		<script src="static/assets/js/jquery.scrollex.min.js"></script>
-		<script src="static/assets/js/browser.min.js"></script>
-		<script src="static/assets/js/breakpoints.min.js"></script>
-		<script src="static/assets/js/util.js"></script>
-		<script src="static/assets/js/main.js"></script>
+				<!-- Wrapper -->
+				<section id="wrapper">
+					<header>
+						<div class="inner">
+							<h2>Project: Twilio API and other APIs</h2>
+						</div>
+					</header>
+					
+
+					<!-- Content -->
+					<div class="wrapper">
+						<div class="inner">
+
+							<section>
+								<h4>Project Information</h4>
+								<blockquote>
+									The purpose of the following project is to use different API's as sources for information to create a message that will be send using the Twilio API. This API allows the user to send the information to a phone number as a text message.
+									<br>1. Retrive data from using the API's.
+									<br>2. Create the text message.
+									<br>3. Send the message using the Twilio Credentials.
+								</blockquote>
+
+								<p>The purpose of this interface is to send information to a Phone number using different API's as:</p>
+								
+								<!-- Creating a table-->
+								<table class="table-wrapper">
+									<thead>
+										<tr>
+											<th>API</th>
+											<th>API Link</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>https://www.twilio.com/en-us</td>
+
+										</tr>
+
+										<tr>
+											<td>2</td>
+											<td>https://api.openweathermap.org</td>
+
+										</tr>
+										
+
+										<tr>
+											<td>3</td>
+											<td>https://hp-api.herokuapp.com/</td>
+
+										</tr>
+
+										<tr>
+											<td>4</td>
+											<td>http://api.open-notify.org/astros.json</td>
+
+										</tr>
+									</tbody>
+								</table>
+
+
+
+								<center>
+									<!-- Post method to send the information using Flask -->
+									<form method="post" action="/module_7">
+										<div class="fields">
+											<div class="field">
+												<label for="weight">Please Insert a number between 1 and 40</label>
+												<input type="text" name="number" id="number"/>
+											</div>
+										</div>
+
+										<ul class="actions">
+											<input  type="submit" value="send_message">
+										</ul>
+										<!-- Message that only will be shown after pressing send -->
+										<p>{{message}}</p>
+									</form>
+									<img src="{{ link }}" alt="HR_image" style="max-width:300px ; max-height: auto;">
+								</center>
+
+				</section>
+			</div>
+				
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
 
 	</body>
 </html>

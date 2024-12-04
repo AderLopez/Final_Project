@@ -1,0 +1,235 @@
+<!-- Using a downloaded template the information from the template is below-->
+
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+
+	<!-- Creating the head on HTML -->
+	<head>
+		<title>Module 6: Basketball API</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+	</head>
+		
+	<style>
+		/* Apply some basic styles */
+		body, html {
+		  margin: 0;
+		  padding: 0;
+		  height: 100%;
+		  display: grid;
+		  place-items: center;
+		}
+
+
+		/* Grid layout for the sections */
+		.container {
+		  display: grid;
+		  grid-template-rows: 1fr 1fr 1fr;
+		  height: 100vh;
+		  width: 100%;
+		}
+		/* Each section styling */
+		.section {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  font-size: 2em;
+		  color: white;
+		}
+		/* Set individual colors */
+		.section-1 { background-color: #ff5733; }
+		.section-2 { background-color: #33c1ff; }
+		.section-3 { background-color: #85e085; }
+	
+		/* Responsive: make sections side by side on large screens */
+		@media (min-width: 768px) {
+		  .container {
+			grid-template-rows: 1fr;
+			grid-template-columns: 1fr 1fr 1fr;
+		  }
+		}
+	</style>
+
+
+	<!-- Creating the Body on HTML -->
+	<body class="is-preload">
+		
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="./" >Personal Profile Home</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu for the options on the Webpage -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="./">Home</a></li>
+					<li><a href="experience">Experiences</a></li>
+					<li><a href="skills">Skills</a></li>
+					<li><a href="education">Education</a></li>
+					<li><a href="licenses">Certifications</a></li>
+					<li><a href="projects">Projects</a></li>
+				</ul>
+				<!-- Close button on the Menu -->
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+
+		<section>
+			
+				<div>														
+					<style>
+						.resized-image {
+							width: auto;   /* Resize as needed */
+							height: 100px;
+									/* Add a top margin to the image */
+						}
+
+					</style>
+					<br><br><br>
+					<center>
+					<img src="static/images/NBA.jpg" alt="NBA" class="resized-image">
+					<img src="static/images/NBA.jpg" alt="NBA" class="resized-image">
+					<img src="static/images/NBA.jpg" alt="NBA" class="resized-image">
+					<img src="static/images/NBA.jpg" alt="NBA" class="resized-image">
+					<img src="static/images/NBA.jpg" alt="NBA" class="resized-image">
+					<img src="static/images/NBA.jpg" alt="NBA" class="resized-image">
+					</center>
+				</div>
+			</center>
+		</section>
+
+		<section id="wrapper">
+			<center>
+				<div class="inner">
+					<h2>NBA - Information</h2>
+					<p>The information published here was obtained from: https://app.balldontlie.io/</p>
+				</div>
+			</center>
+		</section>
+
+
+		<!-- Section for Dashboard -->
+		<section id = "Section-Container">
+			<!-- Wrapper -->
+			<!-- This section states the information of the NBA -->							
+			<!--Dashboard containers for NBA -->
+			<div class="dashboard-container">
+					<div class="box-container">
+						<!-- Box 1 -->
+						<div class="box">
+							<div class="text">
+								<h2 class="topic-heading">TEAMS</h2>
+								<h2 class="topic">{{teams_number}}</h2>
+							</div>
+							<img src="static/images/teams.jpg" alt="likes">
+						</div>
+
+
+						<!-- Box 2 -->
+						<div class="box">
+							<div class="text">
+								<h2 class="topic-heading">Most players are from</h2>
+								<h2 class="topic">{{Highest_country_provider}}</h2>
+							</div>
+							<img src="static/images/USA.jpg" alt="likes">
+						</div>
+
+						<!-- Box 3 -->
+						<div class="box">
+							<div class="text">
+								<h2 class="topic-heading">Tallest Player</h2>
+								<h2 class="topic">{{tallest_player}}</h2>
+							</div>
+							<img src="static/images/Tall.jpg" alt="likes">
+						</div>
+
+						<!-- Box 4 -->
+						<div class="box">
+							<div class="text">
+								<h2 class="topic-heading">Greatest height </h2>
+								<h2 class="topic">{{highest_height}} cm</h2>
+							</div>
+							<img src="static/images/Greatest.gif" alt="likes">
+						</div>
+						
+						<!-- Box 5 -->
+						<div class="box">
+							<div class="text">
+								<h2 class="topic-heading">Players</h2>
+								<h2 class="topic">{{players_number}}</h2>
+							</div>
+							<img src="static/images/players.jpg" alt="likes">
+						</div>
+
+
+
+					</div>
+			</div>
+
+		</section>
+
+
+
+
+		<section>
+			<!-- Section for images of NBA -->
+			<div class="centered-text">
+				<h2>GRAPHICAL INFORMATION 1 MATPLOT</h2>	
+				<p>"The following information shows a histogram for Height and Weight"<br>
+					The graphs were generated using matplot library.<br> In order to change images, please click on the arrows:</p>
+				<section class="carousel">
+					<button class="prev" disabled>◀</button>
+					<div class="images">
+					<img src="static/images/Weight Distribution.svg" class="current"/>
+					<img src="static/images/Height Distribution.svg"/ >
+					<img src="static/images/Players per country.svg"/ >
+					</div>
+					<button class="next">▶</button>
+				</section>
+			</div>
+		</section>		
+
+
+		<section>
+			<div class="centered-text">
+				<br>
+				<h2>GRAPHICAL INFORMATION 2 PYGAL</h2>	
+				<p>"The following information shows a bar chart counting the players per Country" <br> The graphs were generated using Pygal library.</p>
+				<div>
+					<object data="static/images/Players per country_bar_pygal.svg" type="image/svg+xml" style="display: inline-block; width="30%";border:1px solid #ccc;"></object>
+					</div>
+			</div>
+		</section>
+
+		<section>
+			<img src="static/images/Logo.jpg" height=100% width=100%>
+		</section>
+
+		<section>
+
+			<!-- Calling the Scripts provided from the template -->
+				
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+		</section>	
+	</body>
+</html>
